@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# TD React - Exercices pratiques avec Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue dans mon projet **td-react-intro**, réalisé dans le cadre du TD React.
+Ce projet utilise **React**, **TypeScript** et **Vite** pour explorer les bases du
+développement d'une application web interactive.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation et démarrage
 
-## React Compiler
+```bash
+# Cloner le projet
+git clone https://github.com/Natacha62/TD-React.js.git
+cd TD-React.js
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Installer les dépendances
+npm install
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Lancer le serveur de développement
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Fonctionnalités implémentées
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Affichage d'un message personnalisé avec une variable
+* Gestion d'un compteur avec **useState** et boutons d'interaction
+* Mise à jour du titre de la page avec **useEffect**
+* Importation et affichage d'un fichier JSON contenant des super-héros
+* Affichage dynamique de la liste avec **.map()**
+* Champ de recherche pour filtrer les super-héros en temps réel
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Structure du projet
+
+La structure du projet est celle générée automatiquement par Vite. Les seules modifications apportées sont :
+
+- `src/App.tsx` : Composant principal modifié pour intégrer les fonctionnalités du TD (useState, useEffect, etc.)
+- `src/SuperHeros.json` : Fichier JSON ajouté contenant les données des super-héros
+- `images/` : Dossier ajouté à la racine du projet pour stocker les captures d'écran utilisées dans le README
+
+## Aperçu de l'application
+
+1. L'état initial
+
+![Etat initial de l'application](./images/etat_initial.png)
+
+2. Le compteur qui change
+
+![Compteur actif](./images/compteur-change.png)
+
+3. Le filtre des super-héros
+
+![Filtre des super-héros](./images/filtre_super-heros.png)
